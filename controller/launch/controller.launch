@@ -1,0 +1,13 @@
+<launch>
+    <!-- 启动我们创建的手柄控制节点 -->
+    <node pkg="controller" type="controller" name="controller" output="screen"/> 
+    
+    <!-- 向参数服务器写入参数 -->
+    <param name="axis_linear" value="1" type="int"/>
+    <param name="axis_angular" value="3" type="int"/>
+    <param name="start" value="5" type="int"/>
+    
+    <!-- 启动手柄节点，respawn="true"表示节点挂掉时会自动重启 -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joystick" />
+</launch>
+

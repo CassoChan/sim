@@ -17,6 +17,10 @@
     <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
         <arg name="world_name" value="$(find scout_gazebo)/worlds/lab.world" /> 
     </include>
+
+    <include file="$(find controller)/launch/controller.launch"> 
+    </include>
+
     <!-- 在 gazebo 中加载机器人模型  -->
     <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model scout -param robot_description"  />  
 </launch>
